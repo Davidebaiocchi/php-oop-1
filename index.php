@@ -47,14 +47,14 @@ $hp_2 = new Movie('Harry Potter e La camera dei segreti');
 $hp_2->genre = 'Fantasy';
 $hp_2->yearDrop = '2002';
 $hp_2->cast = 'Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris';
-$hp_1->setAge(18);
+$hp_2->setAge(18);
 
 // create 3 film
 $hp_3 = new Movie('Harry Potter e Il prigioniero di Azkaban');
 $hp_3->genre = 'Fantasy';
 $hp_3->yearDrop = '2004';
 $hp_3->cast = 'Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris';
-$hp_1->setAge(3);
+$hp_3->setAge(3);
 
 // drop film
 var_dump($hp_1);
