@@ -13,32 +13,50 @@ class Movie {
     public $genre;
     public $cast;
     public $yearDrop;
+    public $ageForWatch = 0;
 
-    // costruttore
+    // __construct
     function __construct($_title) {
         $this->title = $_title;
+    }
+
+    // create methods
+    public function setAge($age) {
+        if($age >= 18) {
+            $this->ageForWatch = 'Vietato ai minori di 18';
+        }
+        else {
+            $this->ageForWatch = 'Visibile a qualunque età';
+        }
+    }
+
+    public function getAge(){
+        return $this->ageForWatch;
     }
 }
 
 // create 1 film
-$harry_potter_e_la_pietra_filosofale = new Movie('Harry Potter e La pietra filosofale');
-$harry_potter_e_la_pietra_filosofale->genre = 'Fantasy';
-$harry_potter_e_la_pietra_filosofale->yearDrop = '2001';
-$harry_potter_e_la_pietra_filosofale->cast = 'Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris';
+$hp_1 = new Movie('Harry Potter e La pietra filosofale');
+$hp_1->genre = 'Fantasy';
+$hp_1->yearDrop = '2001';
+$hp_1->cast = 'Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris';
+$hp_1->setAge(3);
 
 // create 2 film
-$harry_potter_e_la_camera_dei_segreti = new Movie('Harry Potter e La camera dei segreti');
-$harry_potter_e_la_camera_dei_segreti->genre = 'Fantasy';
-$harry_potter_e_la_camera_dei_segreti->yearDrop = '2002';
-$harry_potter_e_la_camera_dei_segreti->cast = 'Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris';
+$hp_2 = new Movie('Harry Potter e La camera dei segreti');
+$hp_2->genre = 'Fantasy';
+$hp_2->yearDrop = '2002';
+$hp_2->cast = 'Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris';
+$hp_1->setAge(18);
 
 // create 3 film
-$harry_potter_e_il_prigioniero_di_azkaban = new Movie('Harry Potter e Il prigioniero di Azkaban');
-$harry_potter_e_il_prigioniero_di_azkaban->genre = 'Fantasy';
-$harry_potter_e_il_prigioniero_di_azkaban->yearDrop = '2004';
-$harry_potter_e_il_prigioniero_di_azkaban->cast = 'Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris';
+$hp_3 = new Movie('Harry Potter e Il prigioniero di Azkaban');
+$hp_3->genre = 'Fantasy';
+$hp_3->yearDrop = '2004';
+$hp_3->cast = 'Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris';
+$hp_1->setAge(3);
 
 // drop film
-var_dump($harry_potter_e_la_pietra_filosofale);
-var_dump($harry_potter_e_la_camera_dei_segreti);
-var_dump($harry_potter_e_il_prigioniero_di_azkaban);
+var_dump($hp_1);
+var_dump($hp_2);
+var_dump($hp_3);
